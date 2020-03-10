@@ -1,14 +1,25 @@
-import React, { useEffect }from 'react'
+import React, { useState, useEffect } from 'react';
 
 export default function Hooks2() {
-    useEffect(() => {
+    const [counter, setCounter] = useState(0);
 
-    })
+    useEffect(() => {
+        document.title=`count ${counter}`
+    },[increase])
+
+    function increase() {
+        setCounter(counter + 1);
+    }
+    
+    function decrease() {
+        setCounter(counter - 1);
+    }
 
     return (
         <div>
-            <h1>{couter}</h1>
-            <button onClick={increase}></button>
+            <h1>{counter}</h1>
+            <button onClick={increase}> + </button>
+            <button onClick={decrease}> - </button>
         </div>
     )
 }
