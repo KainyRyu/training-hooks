@@ -5,7 +5,8 @@ export default function Hooks2() {
 
     useEffect(() => {
         document.title=`count ${counter}`
-    },[increase])
+        console.log(counter)
+    },[counter])
 
     function increase() {
         setCounter(counter + 1);
